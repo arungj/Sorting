@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +13,51 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sorting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04S-ds-lhm">
+                                <rect key="frame" x="157" y="131" width="60" height="30"/>
+                                <state key="normal" title="Insertion"/>
+                                <connections>
+                                    <action selector="insertion" destination="BYZ-38-t0r" eventType="touchUpInside" id="MWZ-We-opj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c53-Pt-OHX">
+                                <rect key="frame" x="167" y="186" width="40" height="30"/>
+                                <state key="normal" title="Quick"/>
+                                <connections>
+                                    <action selector="quick" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bm5-02-9pC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVm-SP-TyD">
+                                <rect key="frame" x="165" y="241" width="44" height="30"/>
+                                <state key="normal" title="Merge"/>
+                                <connections>
+                                    <action selector="merge" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cef-gY-Hdp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVG-wX-C3m">
+                                <rect key="frame" x="140" y="296" width="95" height="30"/>
+                                <state key="normal" title="Binary Search"/>
+                                <connections>
+                                    <action selector="binarySearch" destination="BYZ-38-t0r" eventType="touchUpInside" id="bzT-or-B6p"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c53-Pt-OHX" firstAttribute="top" secondItem="04S-ds-lhm" secondAttribute="bottom" constant="25" id="2UZ-h1-PyP"/>
+                            <constraint firstItem="PVG-wX-C3m" firstAttribute="top" secondItem="ZVm-SP-TyD" secondAttribute="bottom" constant="25" id="5K4-78-8fF"/>
+                            <constraint firstItem="04S-ds-lhm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Cv5-Z2-k1J"/>
+                            <constraint firstItem="ZVm-SP-TyD" firstAttribute="top" secondItem="c53-Pt-OHX" secondAttribute="bottom" constant="25" id="DU7-49-IP7"/>
+                            <constraint firstItem="04S-ds-lhm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="111" id="HsN-9I-XNs"/>
+                            <constraint firstItem="ZVm-SP-TyD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WpQ-44-YfB"/>
+                            <constraint firstItem="PVG-wX-C3m" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="apq-jT-iPd"/>
+                            <constraint firstItem="c53-Pt-OHX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hGr-u7-xTh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

@@ -10,25 +10,49 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var arrayToSort = [Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        var arrayToSort = [Int]()
        // arrayToSort = [1, 2, 3, 4, 5]
         arrayToSort = randomElements()
-        print("Before")
-        printElements(in: arrayToSort)
        // bubble(array: arrayToSort)
-        //insertionSort(array: arrayToSort)
-       // quickSort(array: arrayToSort)
-       // testInsertionSort(a: &arrayToSort)
-        //testQuickSort(array: &arrayToSort)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    @IBAction func insertion() {
+       // insertionSort(array: arrayToSort)
+        testInsertion2(array: &arrayToSort)
+        print("after")
+        print( arrayToSort)
+        validateSorted(array: arrayToSort)
+    }
+    
+    @IBAction func quick() {
+//        quickSort(array: arrayToSort)
+        testQuickSort(array: &arrayToSort)
+        print("after")
+        print( arrayToSort)
+        validateSorted(array: arrayToSort)
+    }
+    
+    @IBAction func merge() {
         mergeSort(array: &arrayToSort)
         print("after")
-        printElements(in: arrayToSort)
+        print( arrayToSort)
         validateSorted(array: arrayToSort)
-        let element = arrayToSort[8]
-        let elementIndex = binarySearch(array: arrayToSort, element: 111)
+    }
+    
+    @IBAction func binarySearch() {
+        insertionSort(array: &arrayToSort)
+        print("after")
+        print( arrayToSort)
+        let element = arrayToSort[0]
+        let elementIndex = binarySearch(array: arrayToSort, element: element)
         print("element found at Index: \(elementIndex)")
     }
     
@@ -73,7 +97,7 @@ class ViewController: UIViewController {
         
         quickSort(array: &arrayToSort, start: 0, end: arrayToSort.count - 1)
         print("after")
-        printElements(in: arrayToSort)
+        print(arrayToSort)
     }
     
     func quickSort( array: inout [Int], start: Int, end: Int) {
@@ -98,29 +122,25 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Sorts
-    func insertionSort(array: [Int]) {
-        var a = array
-        print("Before")
-        printElements(in: a)
+    func insertionSort(array: inout [Int]) {
         var jRepetition = 0
-        print("total elements: \(a.count)")
-        for i in 1..<a.count {
+        print("total elements: \(array.count)")
+        for i in 1..<array.count {
             var j = i
             jRepetition = 0
-            while j > 0 && a[j-1] > a[j] {
-                a.swapAt(j, j-1)
+            while j > 0 && array[j-1] > array[j] {
+                array.swapAt(j, j-1)
                 j -= 1
                 jRepetition += 1
             }
             print("jRepetition: \(jRepetition)")
         }
-        printElements(in: a)
     }
     
     func bubble(array: [Int]) {
         var arrayToSort = array
         print("Before")
-        printElements(in: arrayToSort)
+        print( arrayToSort)
         var didSwap = false
         var jRepetition = 0
         print("total elements: \(arrayToSort.count)")
@@ -138,14 +158,14 @@ class ViewController: UIViewController {
             if !didSwap { break }
         }
         print("\n After")
-        printElements(in: arrayToSort)
+        print( arrayToSort)
     }
     
     //MARK: - Other Methods
     func binarySearch(array: [Int], element: Int) -> Int {
         print("searching element: \(element)")
         var start = 0, end = array.count - 1
-        while start < end {
+        while start <= end {
             //let mid = (start + end) / 2
             // Optimizing for large integer overflow in case of very large arrays.
             let mid = start / 2 + end / 2
@@ -161,35 +181,29 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Other Methods
-    func printElements(in array: [Int]) {
-        for i in 0..<array.count {
-            print("\(array[i])")
-        }
-    }
-    
     func randomElements() -> [Int] {
         var array = [Int]()
         for _ in 1...10 {
             array.append(Int(arc4random_uniform(100)))
         }
+        print("before")
+        print(array)
         return array
     }
     
     func validateSorted(array: [Int]) {
-        var valid = true
         for i in 0..<array.count-1 {
             if array[i] > array[i+1] {
-                valid = false
-                break
+                print("invalid sorting")
+                return
             }
         }
-        if valid { print("correctly sorted array") } else {
-            print("invalid sorting") }
+        print("correctly sorted array")
     }
 }
 
 extension ViewController {
-    func testInsertionSort(a: inout [Int]) {
+    func testInsertion1(a: inout [Int]) {
         for i in 1..<a.count {
             var j = i
             while j > 0 && a[j-1] > a[j] {
@@ -223,5 +237,17 @@ extension ViewController {
         }
         array.swapAt(max, pIndex)
         return pIndex
+    }
+}
+
+extension ViewController {
+    func testInsertion2(array: inout [Int]) {
+        for i in 1..<array.count {
+            var j = i
+            while j > 0 && array[j] < array[j - 1] {
+                array.swapAt(j, j - 1)
+                j -= 1
+            }
+        }
     }
 }
