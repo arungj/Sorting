@@ -18,64 +18,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04S-ds-lhm">
-                                <rect key="frame" x="157" y="131" width="60" height="30"/>
-                                <state key="normal" title="Insertion"/>
-                                <connections>
-                                    <action selector="insertion" destination="BYZ-38-t0r" eventType="touchUpInside" id="MWZ-We-opj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c53-Pt-OHX">
-                                <rect key="frame" x="167" y="186" width="40" height="30"/>
-                                <state key="normal" title="Quick"/>
-                                <connections>
-                                    <action selector="quick" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bm5-02-9pC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVm-SP-TyD">
-                                <rect key="frame" x="165" y="241" width="44" height="30"/>
-                                <state key="normal" title="Merge"/>
-                                <connections>
-                                    <action selector="merge" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cef-gY-Hdp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVG-wX-C3m">
-                                <rect key="frame" x="140" y="296" width="95" height="30"/>
-                                <state key="normal" title="Binary Search"/>
-                                <connections>
-                                    <action selector="binarySearch" destination="BYZ-38-t0r" eventType="touchUpInside" id="bzT-or-B6p"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aER-J6-OPO">
-                                <rect key="frame" x="121.5" y="617" width="133" height="30"/>
-                                <state key="normal" title="generate new array"/>
-                                <connections>
-                                    <action selector="generateArray:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rc2-gI-0E7"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qpC-Wb-vqt">
-                                <rect key="frame" x="50" y="351" width="275" height="216"/>
-                                <color key="backgroundColor" red="0.6588235294117647" green="0.78915377350000004" blue="0.84718647879999998" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efR-Qo-cIW">
+                                <rect key="frame" x="20" y="40" width="335" height="627"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="I6B-0Y-AK1">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="466"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aER-J6-OPO" userLabel="Generate new array">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                <state key="normal" title="Generate new array"/>
+                                                <connections>
+                                                    <action selector="generateArray:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rc2-gI-0E7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04S-ds-lhm">
+                                                <rect key="frame" x="0.0" y="50" width="335" height="30"/>
+                                                <state key="normal" title="Insertion"/>
+                                                <connections>
+                                                    <action selector="insertion" destination="BYZ-38-t0r" eventType="touchUpInside" id="MWZ-We-opj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c53-Pt-OHX">
+                                                <rect key="frame" x="0.0" y="100" width="335" height="30"/>
+                                                <state key="normal" title="Quick"/>
+                                                <connections>
+                                                    <action selector="quick" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bm5-02-9pC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVm-SP-TyD">
+                                                <rect key="frame" x="0.0" y="150" width="335" height="30"/>
+                                                <state key="normal" title="Merge"/>
+                                                <connections>
+                                                    <action selector="merge" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cef-gY-Hdp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVG-wX-C3m">
+                                                <rect key="frame" x="0.0" y="200" width="335" height="30"/>
+                                                <state key="normal" title="Binary Search"/>
+                                                <connections>
+                                                    <action selector="binarySearch" destination="BYZ-38-t0r" eventType="touchUpInside" id="bzT-or-B6p"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qpC-Wb-vqt">
+                                                <rect key="frame" x="0.0" y="250" width="335" height="216"/>
+                                                <color key="backgroundColor" red="0.6588235294117647" green="0.78915377350000004" blue="0.84718647879999998" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="216" id="ZIt-MP-jyl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="I6B-0Y-AK1" firstAttribute="width" secondItem="efR-Qo-cIW" secondAttribute="width" id="2VI-c8-rVT"/>
+                                    <constraint firstItem="I6B-0Y-AK1" firstAttribute="leading" secondItem="efR-Qo-cIW" secondAttribute="leading" id="FRf-XC-LOv"/>
+                                    <constraint firstAttribute="bottom" secondItem="I6B-0Y-AK1" secondAttribute="bottom" id="MiY-hl-Vhg"/>
+                                    <constraint firstAttribute="trailing" secondItem="I6B-0Y-AK1" secondAttribute="trailing" id="OyU-jz-31v"/>
+                                    <constraint firstItem="I6B-0Y-AK1" firstAttribute="top" secondItem="efR-Qo-cIW" secondAttribute="top" id="UcT-lG-h3G"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="c53-Pt-OHX" firstAttribute="top" secondItem="04S-ds-lhm" secondAttribute="bottom" constant="25" id="2UZ-h1-PyP"/>
-                            <constraint firstItem="PVG-wX-C3m" firstAttribute="top" secondItem="ZVm-SP-TyD" secondAttribute="bottom" constant="25" id="5K4-78-8fF"/>
-                            <constraint firstItem="aER-J6-OPO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="B2h-Ng-2Kk"/>
-                            <constraint firstItem="04S-ds-lhm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Cv5-Z2-k1J"/>
-                            <constraint firstItem="qpC-Wb-vqt" firstAttribute="top" secondItem="PVG-wX-C3m" secondAttribute="bottom" constant="25" id="D7j-AL-snF"/>
-                            <constraint firstItem="ZVm-SP-TyD" firstAttribute="top" secondItem="c53-Pt-OHX" secondAttribute="bottom" constant="25" id="DU7-49-IP7"/>
-                            <constraint firstItem="aER-J6-OPO" firstAttribute="top" secondItem="qpC-Wb-vqt" secondAttribute="bottom" constant="50" id="GGm-Cd-rZW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aER-J6-OPO" secondAttribute="bottom" constant="20" id="GJX-zm-c88"/>
-                            <constraint firstItem="04S-ds-lhm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="111" id="HsN-9I-XNs"/>
-                            <constraint firstItem="ZVm-SP-TyD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WpQ-44-YfB"/>
-                            <constraint firstItem="qpC-Wb-vqt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="YmC-0Y-96M"/>
-                            <constraint firstItem="PVG-wX-C3m" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="apq-jT-iPd"/>
-                            <constraint firstItem="c53-Pt-OHX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hGr-u7-xTh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qpC-Wb-vqt" secondAttribute="trailing" constant="50" id="hYx-mr-Jvj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="efR-Qo-cIW" secondAttribute="trailing" constant="20" id="IbL-cZ-hAA"/>
+                            <constraint firstItem="efR-Qo-cIW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Q9B-rL-m7k"/>
+                            <constraint firstItem="efR-Qo-cIW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jwd-jP-nlb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="efR-Qo-cIW" secondAttribute="bottom" id="ofC-YP-hhb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -85,6 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="117.39130434782609"/>
         </scene>
     </scenes>
 </document>
